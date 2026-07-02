@@ -1,0 +1,33 @@
+.text-bl {
+  // opacity: 0;
+  transform: translateX(500px);
+  background-color: rgb(252, 231, 231);
+}
+
+.block__side.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  /* встал на своё законное место */
+}
+
+.pin-wrap {
+  height: 150vh;
+  /* ← ВОТ ЭТО И ЕСТЬ ТВОЙ ОТВЕТ: "на сколько скроллов" */
+  position: relative;
+}
+
+.pin-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  // width: 100vw;
+  overflow-x: hidden;
+  /* залипает на весь экран */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.block--second {
+  height: 500px;
+}
