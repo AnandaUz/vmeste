@@ -2,6 +2,8 @@ import type { Page } from "../../types";
 import "./home.scss";
 import html from "./home.html?raw";
 
+import "@/components/c-ani/c-ani-start/c-ani-start";
+
 export const homePage: Page = () => {
   return {
     html: html.replaceAll(

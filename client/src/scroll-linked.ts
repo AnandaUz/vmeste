@@ -42,7 +42,7 @@ export function update() {
   const textBl02 = document.querySelector(".block02") as HTMLElement;
 
   //   const textOpacity = ScrollLinked.getSubProgress(progress, 0.0, 0.3); // проявится в начале
-  const block00 = ScrollLinked.getSubProgress(progress, 0.1, 0.2);
+  const block00 = ScrollLinked.getSubProgress(progress, 0, 0.2);
   const block01 = ScrollLinked.getSubProgress(progress, 0.2, 0.3);
   const block02 = ScrollLinked.getSubProgress(progress, 0.3, 0.4);
 
