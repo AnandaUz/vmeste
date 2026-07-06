@@ -1,6 +1,6 @@
 c-ani-start.ani-block {
      .pin-wrap {
-          height: 300vh;
+          height: 150vh;
      }
 
      // .pin-sticky {
@@ -52,5 +52,56 @@ c-ani-start.ani-block {
           text-align: left;
           padding: 192px 0px 0 15px;
           line-height: .9;
+     }
+
+     .block-00 {
+          font-size: 23px;
+          color: #ffffff;
+          line-height: 1.1;
+          padding: 17px;
+          opacity: 0;
+          width: 360px;
+     }
+
+     .bl-00,
+     .bl-02 {
+          transform: translateX(200px);
+          top: 50%;
+     }
+
+     .bl-01,
+     .bl-03 {
+          transform: translateX(-200px);
+          top: 50%;
+     }
+
+     .bl-02 {
+          font-size: 28px;
+          text-align: center;
+     }
+
+     .bl-03 {
+          .title {
+               font-size: 20px;
+               line-height: 1.1;
+               color: #ffffffe0;
+               padding: 10px 05px;
+               text-align: center;
+          }
+     }
+
+     .block-01 {
+          position: absolute;
+          top: 0
+     }
+
+     .block-02 {
+
+          position: absolute;
+          // height: 100vh;
+          top: 500px;
+          // margin: 500px 0 0;
+          width: 100%;
+
      }
 }
