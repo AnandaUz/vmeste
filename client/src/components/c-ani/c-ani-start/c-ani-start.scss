@@ -64,7 +64,8 @@ c-ani-start.ani-block {
      }
 
      .bl-00,
-     .bl-02 {
+     .bl-02,
+     .bl-04 {
           transform: translateX(200px);
           top: 50%;
      }
@@ -81,13 +82,21 @@ c-ani-start.ani-block {
      }
 
      .bl-03 {
-          .title {
-               font-size: 20px;
-               line-height: 1.1;
-               color: #ffffffe0;
-               padding: 10px 05px;
-               text-align: center;
-          }
+
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          padding: 5px 0;
+
+
+     }
+
+     .title {
+          font-size: 20px;
+          line-height: 1.1;
+          color: #ffffffe0;
+          padding: 10px 05px;
+          text-align: center;
      }
 
      .block-01 {

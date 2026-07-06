@@ -59,7 +59,7 @@ export class CAniStart extends CAniBlock {
     this.doAnimation({
       elClassName: ".block-02",
       start: 0.1,
-      duration: d00 * 4,
+      duration: d00 * 5,
       onStep: (progress, elem: HTMLElement) => {
         elem.style.transform = `translateY(${-progress * 500}px)`;
       },
@@ -97,6 +97,15 @@ export class CAniStart extends CAniBlock {
       duration: d00,
       onStep: (progress, elem: HTMLElement) => {
         elem.style.transform = `translateX(-${200 - progress * 200}px)`;
+        elem.style.opacity = `${progress}`;
+      },
+    });
+    this.doAnimation({
+      elClassName: ".bl-04",
+      start: 0.1 + d00 * 4,
+      duration: d00,
+      onStep: (progress, elem: HTMLElement) => {
+        elem.style.transform = `translateX(${200 - progress * 200}px)`;
         elem.style.opacity = `${progress}`;
       },
     });
