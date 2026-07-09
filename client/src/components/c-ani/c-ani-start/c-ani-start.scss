@@ -31,6 +31,7 @@ c-ani-start.ani-block {
                max-width: 402px;
                margin: 0 auto;
                color: #231813;
+               position: relative;
           }
 
 
@@ -60,7 +61,7 @@ c-ani-start.ani-block {
           line-height: 1.1;
           padding: 17px;
           opacity: 0;
-          width: 360px;
+          // width: 360px;
      }
 
      .bl-00,
@@ -107,10 +108,13 @@ c-ani-start.ani-block {
      .block-02 {
 
           position: absolute;
-          // height: 100vh;
+          height: 100vh;
           top: 500px;
-          // margin: 500px 0 0;
           width: 100%;
+          padding: 0 0 111px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
 
      }
 }

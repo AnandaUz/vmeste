@@ -7,12 +7,18 @@ type TDoAnimation = {
   start?: number;
   duration?: number;
   end?: number;
-  onStep: (progress: number, el: HTMLElement) => void;
+  onStep?: (progress: number, el: HTMLElement) => void;
+  onStepPixel?: ({ y, yProgress, el }: TOnStepPixel) => void;
+};
+type TOnStepPixel = {
+  y: number;
+  yProgress: number;
+  el: HTMLElement;
 };
 
 export class CAniBlock extends HTMLElement {
   private ticking = false;
-  wrapEl?: HTMLElement;
+  wrapEl!: HTMLElement;
   progress = 0;
   animations: (() => void)[] = [];
 
@@ -35,13 +41,13 @@ export class CAniBlock extends HTMLElement {
     );
   }
   init() {
-    this.wrapEl = document.querySelector(".pin-wrap") as HTMLElement;
+    this.wrapEl = this.querySelector(".pin-wrap") as HTMLElement;
   }
   getSubProgress(start: number, end: number) {
     return ScrollLinked.getSubProgress(this.progress, start, end);
   }
   doAnimation({ elClassName, start, duration, end, onStep }: TDoAnimation) {
-    const el = document.querySelector(elClassName) as HTMLElement;
+    const el = this.querySelector(elClassName) as HTMLElement;
     if (!el) return;
 
     const _start = start ?? 0;
@@ -63,8 +69,45 @@ export class CAniBlock extends HTMLElement {
       onStep(subProgress, el);
     });
   }
+  doAnimationByPixel({
+    elClassName,
+    start,
+    duration,
+    end,
+    onStepPixel,
+  }: TDoAnimation) {
+    const el = this.querySelector(elClassName) as HTMLElement;
+    if (!el) return;
+
+    const _start = start ?? 0;
+    let _end;
+    if (duration) _end = _start + duration;
+    else _end = end ?? 1;
+
+    let v = -Infinity;
+
+    this.animations.push(() => {
+      const rect = this.wrapEl.getBoundingClientRect();
+      let y = -rect.y;
+
+      // if (y < _start || y > _end) return;
+
+      y = Math.max(_start, y);
+      y = Math.min(_end, y);
+
+      const yProgress = (y - _start) / (_end - _start);
+
+      // console.log(y, yProgress);
+
+      if (v === yProgress) return;
+      v = yProgress;
+
+      onStepPixel?.({ y: y - _start, yProgress, el });
+    });
+  }
   update() {
     if (!this.wrapEl) return;
+
     this.progress = ScrollLinked.getPinProgress(this.wrapEl);
     // Apply progress to CSS variable for styling
     this.style.setProperty("--pin-progress", this.progress.toString());
@@ -72,5 +115,17 @@ export class CAniBlock extends HTMLElement {
 
     this.animations.forEach((fn) => fn());
   }
+  /*
+  getY() {
+    const rect = this.wrapEl.getBoundingClientRect();
+
+    console.log(rect);
+
+    // const scrollableDistance = rect.height - window.innerHeight;
+    // // сколько "запаса" всего
+    // const progress = -rect.top / scrollableDistance;
+    // return Math.min(1, Math.max(0, progress));
+  }
+  */
 }
 customElements.define("c-ani-block", CAniBlock);

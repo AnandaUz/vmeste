@@ -2,35 +2,39 @@ c-ani-2-pochemu.ani-block {
      --url: url(@assets/p2-bl-0.svg);
 
 
-     .pin-sticky {
+     .pin-sticky {}
+
+     .pin-wrap {
+          height: 2400px;
+     }
+
+     .block-00 {
           background-image: var(--url);
           background-position: center -300px;
           background-size: 595px 593px;
           background-repeat: no-repeat;
-     }
-
-     .pin-wrap {
-          height: 250vh;
-     }
-
-     .block-00 {
           font-size: 27px;
           color: #ffffff;
           line-height: 1.1;
           text-align: center;
           position: relative;
           z-index: 3;
+
      }
 
      h2 {
           font-size: 25px;
           padding: 15px 0 10px;
+          position: relative;
+          z-index: 10;
      }
 
      .b-1 {
           font-size: 22px;
           max-width: 358px;
           margin: 0 auto;
+          position: relative;
+          z-index: 10;
      }
 
      .block-01 {
@@ -41,14 +45,16 @@ c-ani-2-pochemu.ani-block {
           background-repeat: no-repeat;
           color: #ffffff;
           line-height: 1.1;
-          height: 467px;
+          height: 565px;
           text-align: right;
           position: absolute;
           top: 0;
-          left: 25%;
+          left: 50%;
           width: 75%;
-          padding: 99px 10px 0px 16px;
+          padding: 99px 17px 0px 16px;
           z-index: 2;
+          margin: 0px 0 0 -90px;
+          transform: translateX(450px);
 
           span {
                max-width: 330px;
@@ -70,32 +76,38 @@ c-ani-2-pochemu.ani-block {
           color: #ffffff;
           line-height: 1.1;
           text-align: right;
-          width: 60%;
+          width: 63%;
           position: absolute;
-          right: 40%;
+          right: 50%;
           top: 0;
           height: 683px;
           z-index: 1;
+          margin: 0 -42px 0 0;
+          padding: 206px 62px 0;
+          display: flex;
+          align-items: flex-start;
+          justify-content: end;
+          transform: translateX(-450px);
 
 
           span {
-               max-width: 282px;
+               max-width: 260px;
                display: flex;
-               /* height: 136px; */
                align-items: center;
                justify-content: center;
                font-size: 22px;
                text-align: left;
-               padding: 210px 18px 0 10px;
+
 
           }
      }
 
      .block-03 {
           position: absolute;
-          top: 518px;
+          top: 352px;
           left: 50%;
-          transform: translateX(-50%);
+          transform: translateX(-50%) rotate(315deg);
+          z-index: 4;
 
           span {
                width: 340px;
@@ -108,14 +120,25 @@ c-ani-2-pochemu.ani-block {
                font-size: 22px;
                font-weight: 700;
                text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+               transform: translateX(-600px);
           }
      }
 
      .t-block-0 {
-          position: absolute;
-          left: 50%;
-          top: 500px;
+          top: 610px;
+          padding: 0 10px;
+          font-size: 21px;
+          text-align: left;
+          margin: 500px auto 0;
+          max-width: 465px;
 
+          >div {
+               padding: 15px 0;
+          }
+
+          .r {
+               text-align: right;
+          }
      }
 
      .block-04 {
