@@ -49,12 +49,17 @@ export class CAniBlock extends HTMLElement {
     if (duration) _end = _start + duration;
     else _end = end ?? 1;
 
+    let v = -Infinity;
+
     this.animations.push(() => {
       const subProgress = ScrollLinked.getSubProgress(
         this.progress,
         _start,
         _end,
       );
+      if (v === subProgress) return;
+      v = subProgress;
+
       onStep(subProgress, el);
     });
   }

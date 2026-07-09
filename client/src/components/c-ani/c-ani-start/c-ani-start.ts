@@ -9,14 +9,25 @@ export class CAniStart extends CAniBlock {
     this.update();
     this.init();
 
+    //-стрелка вниз
     this.doAnimation({
       elClassName: ".str-down",
       start: 0,
-      end: 0.2,
+      duration: 0.2,
       onStep: (progress, elem: HTMLElement) => {
-        elem.style.transform = `translateY(${progress * 100}px)`;
+        elem.style.transform = `translateY(${progress * 150}px)`;
       },
     });
+
+    this.doAnimation({
+      elClassName: ".str-down",
+      start: 0.8,
+      duration: 0.2,
+      onStep: (progress, elem: HTMLElement) => {
+        elem.style.transform = `translateY(${(1 - progress) * 150}px)`;
+      },
+    });
+    //
     const s = 1000;
     this.doAnimation({
       elClassName: ".i01",

@@ -3,6 +3,7 @@ import "./home.scss";
 import html from "./home.html?raw";
 
 import "@/components/c-ani/c-ani-start/c-ani-start";
+import "@/components/c-ani/c-ani-2-pochemu/c-ani-2-pochemu";
 
 export const homePage: Page = () => {
   return {
