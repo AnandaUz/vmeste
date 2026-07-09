@@ -66,7 +66,7 @@ export class CAniBlock extends HTMLElement {
       if (v === subProgress) return;
       v = subProgress;
 
-      onStep(subProgress, el);
+      onStep?.(subProgress, el);
     });
   }
   doAnimationByPixel({

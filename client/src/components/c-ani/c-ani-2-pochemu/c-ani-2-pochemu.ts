@@ -10,7 +10,6 @@ export class CAni2Pochemu extends CAniBlock {
     this.init();
 
     const dx = 450;
-    const dt = 0.2;
     const dd = 150;
     const d0 = 30;
     let t = -50;
