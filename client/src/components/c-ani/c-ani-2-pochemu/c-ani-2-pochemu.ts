@@ -12,7 +12,7 @@ export class CAni2Pochemu extends CAniBlock {
     const dx = 450;
     const dd = 150;
     const d0 = 30;
-    let t = -50;
+    let t = -100;
     this.doAnimationByPixel({
       elClassName: ".block-01",
       start: t,
