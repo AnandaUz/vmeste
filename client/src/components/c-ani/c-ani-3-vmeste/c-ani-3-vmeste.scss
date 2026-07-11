@@ -1,19 +1,22 @@
 c-ani-3-vmeste.ani-block {
      --url: url(@assets/bg-3-1.svg);
-     --gr1: linear-gradient(180deg, #1A595B 0%, #00A6AB 100%);
-     --gr2: linear-gradient(180deg, #00C851 0%, #2BC0E4 100%);
-     --gr3: linear-gradient(180deg, #E79C4F 0%, #FFC845 100%);
-     --gr4: linear-gradient(180deg, #8E4E81 0%, #D071BB 100%);
-     --gr5: linear-gradient(180deg, #D76271 0%, #E68A97 100%);
+     --gr1: linear-gradient(180deg, #2CAA07 0%, #4B9605 70%);
+     --gr2: linear-gradient(180deg, #E63910 0%, #FF8B4C 100%);
+     --gr3: linear-gradient(180deg, #00A2A8 0%, #346696 100%);
+     --gr4: linear-gradient(180deg, #980095 0%, #670048 100%);
+
+     position: relative;
+     top: -100vh;
+
 
      .pin-wrap {
-          height: 1800px;
+          height: 2100px;
      }
 
      .block-00 {
           background-image: var(--url), var(--gr1);
           background-position: top center;
-          background-size: 845px 225px, 100% 100%;
+          background-size: 113px 225px, 100% 100%;
           font-size: 30px;
           color: #ffffff;
           line-height: 1.1;
@@ -23,7 +26,10 @@ c-ani-3-vmeste.ani-block {
           height: 100vh;
           background-repeat: repeat-x;
           border-radius: 20px;
+          max-width: 500px;
+          margin: 0 auto;
      }
+
 
      .in-block {
           max-width: 500px;
@@ -38,7 +44,7 @@ c-ani-3-vmeste.ani-block {
           .in {
                background-image: var(--url), var(--gr2);
                background-position: top center;
-               background-size: 739px 160px, 100% 100%;
+               background-size: 70px 134px, 100% 100%;
                background-repeat: repeat-x;
                padding: 20px;
                border-radius: 20px;
@@ -79,6 +85,10 @@ c-ani-3-vmeste.ani-block {
           padding: 15px 10px 10px;
           position: relative;
           z-index: 10;
+     }
+
+     .bl-5 {
+          font-size: 26px;
      }
 
 

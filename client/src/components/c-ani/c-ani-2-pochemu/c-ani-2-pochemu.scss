@@ -3,7 +3,7 @@ c-ani-2-pochemu.ani-block {
 
 
      .pin-wrap {
-          height: 2300px;
+          height: calc(2500px + 100vh);
      }
 
      .block-00 {
@@ -123,12 +123,15 @@ c-ani-2-pochemu.ani-block {
      }
 
      .t-block-0 {
-          top: 610px;
-          padding: 0 10px;
-          font-size: 21px;
+          font-size: 23px;
           text-align: left;
-          margin: 500px auto 0;
+          padding: 200px 15px 107px;
           max-width: 465px;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin: 299px auto 0;
 
           >div {
                padding: 17px 0;

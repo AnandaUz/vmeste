@@ -13,8 +13,8 @@ export class CAni3VMeste extends CAniBlock {
     window.scrollBy(0, r.top);
 
     const dy = 800;
-    const dd = 250;
-    const d0 = 30;
+    const dd = 400;
+    const d0 = 0;
     let t = 0;
     for (let i = 1; i < 4; i++) {
       this.doAnimationByPixel({

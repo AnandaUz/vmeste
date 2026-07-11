@@ -80,6 +80,16 @@ export class CAni2Pochemu extends CAniBlock {
         },
       });
     }
+    // this.doAnimationByPixel({
+    //   elClassName: ".pin-sticky",
+    //   start: t,
+    //   duration: dd,
+    //   onStepPixel: ({ yProgress = 0, el }) => {
+    //     if (yProgress > 0.1) {
+    //       el.style.position = `fixed`;
+    //     }
+    //   },
+    // });
   }
 }
 customElements.define("c-ani-2-pochemu", CAni2Pochemu);
