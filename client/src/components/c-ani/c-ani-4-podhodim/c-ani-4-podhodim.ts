@@ -11,7 +11,7 @@ export class CAni4Podhodim extends CAniBlock {
 
     this.scrollToTop();
 
-    const h0 = (window.innerHeight - 1022) / 2 - 100;
+    const h0 = (window.innerHeight - 1022) / 2 - 150;
     // const dy = 800;
     const dd = 200;
     const d0 = 0;
@@ -43,25 +43,26 @@ export class CAni4Podhodim extends CAniBlock {
         el.style.transform = `translateY(${h0 * (1 - yProgress)}px)`;
       },
     });
-    this.doAnimationByPixel({
-      elClassName: ".block-01",
-      start: t,
-      duration: dd,
-      onStepPixel: ({ yProgress = 0, el }) => {
-        el.style.transform = `translateY(${-h0 * yProgress}px)`;
-        el.style.opacity = yProgress.toString();
-      },
-    });
+    // this.doAnimationByPixel({
+    //   elClassName: ".block-01",
+    //   start: t,
+    //   duration: dd,
+    //   onStepPixel: ({ yProgress = 0, el }) => {
+    //     el.style.transform = `translateY(${-h0 * yProgress}px)`;
+
+    //   },
+    // });
     t += dd + d0;
     this.doAnimationByPixel({
       elClassName: ".block-01",
       start: t,
       duration: dd * 4,
-      onStepPixel: ({ yProgress = 0, el }) => {
+      onStepPixel: ({ yProgress = 0, y = 0, el }) => {
         // const n = 4;
         // const amplitude = 1;
         // const v = Math.sin(2 * Math.PI * yProgress) * yProgress;
-        el.style.transform = `translateY(${-h0}px) rotate(${-270 * yProgress}deg)`;
+        el.style.transform = `translateY(${-h0}px) rotate(${45 + -(270 + 45) * yProgress}deg)`;
+        el.style.opacity = (y / 100).toString();
       },
     });
   }
