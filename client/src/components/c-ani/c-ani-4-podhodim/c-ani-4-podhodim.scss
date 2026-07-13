@@ -1,0 +1,109 @@
+c-ani-4-podhodim.ani-block {
+
+     --bg1: url(@assets/bl-4-1.svg);
+     --bg2: url(@assets/bl-4-2.svg);
+     --bg3: url(@assets/bl-4-3.svg);
+
+     .pin-wrap {
+          height: 3500px;
+     }
+
+     .block-00 {
+          // margin: 90px 0 0;
+          display: flow-root;
+          height: 100vh;
+          position: absolute;
+          left: 50%;
+     }
+
+     .bg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-size: cover;
+     }
+
+     .bg-1 {
+          width: 1022px;
+          height: 1022px;
+          background-image: var(--bg1);
+     }
+
+     .bg-2 {
+          width: 541px;
+          height: 541px;
+          background-image: var(--bg2);
+     }
+
+     .bg-3 {
+          width: 190px;
+          height: 190px;
+          background-image: var(--bg3);
+     }
+
+     .block-01 {
+          height: 100vh;
+          position: absolute;
+          width: 100%;
+
+          .in {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+
+               font-size: 26px;
+               color: #fff;
+
+               span {
+                    margin: -695px 0 0;
+                    width: 300px;
+               }
+          }
+
+          .t-2 {
+               transform: translate(-50%, -50%) rotate(90deg);
+          }
+
+          .t-3 {
+               transform: translate(-50%, -50%) rotate(180deg);
+          }
+
+          .t-4 {
+               transform: translate(-50%, -50%) rotate(270deg);
+          }
+     }
+
+
+     .block-l0 {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+     }
+
+     h2 {
+          font-size: 29px;
+          color: #410B4A;
+          padding: 15px 15px 0px;
+          line-height: 1;
+          margin: 0 auto;
+          max-width: 500px;
+     }
+
+     .block-02 {
+          margin: 100vh 0 0;
+     }
+
+
+
+
+
+
+
+}

@@ -105,6 +105,10 @@ export class CAniBlock extends HTMLElement {
       onStepPixel?.({ y: y - _start, yProgress, el });
     });
   }
+  scrollToTop() {
+    const r = this.getBoundingClientRect();
+    window.scrollBy(0, r.top);
+  }
   update() {
     if (!this.wrapEl) return;
 

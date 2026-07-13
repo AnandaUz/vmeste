@@ -9,9 +9,6 @@ export class CAni3VMeste extends CAniBlock {
     this.update();
     this.init();
 
-    const r = this.getBoundingClientRect();
-    window.scrollBy(0, r.top);
-
     const dy = 800;
     const dd = 400;
     const d0 = 0;

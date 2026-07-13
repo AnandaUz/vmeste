@@ -5,6 +5,7 @@ import html from "./home.html?raw";
 import "@/components/c-ani/c-ani-start/c-ani-start";
 import "@/components/c-ani/c-ani-2-pochemu/c-ani-2-pochemu";
 import "@/components/c-ani/c-ani-3-vmeste/c-ani-3-vmeste";
+import "@/components/c-ani/c-ani-4-podhodim/c-ani-4-podhodim";
 
 export const homePage: Page = () => {
   return {
