@@ -6,6 +6,7 @@ import "@/components/c-ani/c-ani-start/c-ani-start";
 import "@/components/c-ani/c-ani-2-pochemu/c-ani-2-pochemu";
 import "@/components/c-ani/c-ani-3-vmeste/c-ani-3-vmeste";
 import "@/components/c-ani/c-ani-4-podhodim/c-ani-4-podhodim";
+import "@/components/c-ani/c-ani-5-menyaetsya/c-ani-5-menyaetsya";
 
 export const homePage: Page = () => {
   return {

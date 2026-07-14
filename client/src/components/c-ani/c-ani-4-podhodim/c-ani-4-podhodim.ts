@@ -12,6 +12,8 @@ export class CAni4Podhodim extends CAniBlock {
     // this.scrollToTop();
 
     const h0 = (window.innerHeight - 1022) / 2 - 150;
+    const hTop = 120;
+    const h1 = window.innerHeight / 2 - hTop;
     // const dy = 800;
     const dd = 200;
     const d0 = 0;
@@ -43,36 +45,62 @@ export class CAni4Podhodim extends CAniBlock {
         el.style.transform = `translateY(${h0 * (1 - yProgress)}px)`;
       },
     });
-    // this.doAnimationByPixel({
-    //   elClassName: ".block-01",
-    //   start: t,
-    //   duration: dd,
-    //   onStepPixel: ({ yProgress = 0, el }) => {
-    //     el.style.transform = `translateY(${-h0 * yProgress}px)`;
-
-    //   },
-    // });
     t += dd + d0;
 
-    const easeInOutCubic = (t: number): number => {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    };
-
-    const getSteppedProgress = (progress: number, steps: number): number => {
-      const segment = 1 / steps;
-      const segmentIndex = Math.min(steps - 1, Math.floor(progress / segment));
-      const local = (progress - segmentIndex * segment) / segment;
-      return (segmentIndex + easeInOutCubic(local)) / steps;
-    };
     this.doAnimationByPixel({
       elClassName: ".block-01",
       start: t,
       duration: dd * 4,
       onStepPixel: ({ yProgress = 0, y = 0, el }) => {
-        // const n = 4;
-        // const amplitude = 1;
-        const v = getSteppedProgress(yProgress, 4);
+        const v = yProgress;
         el.style.transform = `translateY(${-h0}px) rotate(${45 + -(270 + 45) * v}deg)`;
+        el.style.opacity = (y / 100).toString();
+      },
+    });
+    t += dd * 4;
+    this.doAnimationByPixel({
+      elClassName: ".block-01",
+      start: t,
+      duration: dd / 2,
+      onStepPixel: ({ yProgress = 0, el }) => {
+        if (yProgress === 0) return;
+        el.style.opacity = (1 - yProgress).toString();
+      },
+    });
+    t += dd / 2;
+
+    this.doAnimationByPixel({
+      elClassName: ".block-00",
+      start: t,
+      duration: dd,
+      onStepPixel: ({ yProgress = 0, el }) => {
+        if (yProgress === 0) return;
+        const yy = h0 - (h0 - h1) * yProgress;
+        el.style.transform = `translateY(${-yy}px) scale(${1 + 1.3 * yProgress})`;
+      },
+    });
+    t += dd;
+
+    this.doAnimationByPixel({
+      elClassName: "h2.m",
+      start: t,
+      duration: dd / 2,
+      onStepPixel: ({ yProgress = 0, el }) => {
+        el.style.transform = `scale(${2 - yProgress})`;
+        el.style.opacity = yProgress.toString();
+      },
+    });
+    const el0 = this.querySelector(".block-02") as HTMLElement;
+    const mEl0 = window.innerHeight / 2 - hTop;
+    el0.style.marginTop = -mEl0 + "px";
+    t += dd / 2;
+    this.doAnimationByPixel({
+      elClassName: ".block-02",
+      start: t,
+      duration: dd * 4,
+      onStepPixel: ({ yProgress = 0, y = 0, el }) => {
+        const v = yProgress;
+        el.style.transform = `rotate(${45 + -(270 + 45) * v}deg)`;
         el.style.opacity = (y / 100).toString();
       },
     });

@@ -1,0 +1,63 @@
+c-ani-5-menyaetsya.ani-block {
+
+     --bg1: url(@assets/bl-5-1.svg);
+
+     .pin-wrap {
+          height: 3800px;
+     }
+
+     .block-00 {
+
+          display: flow-root;
+          height: 100vh;
+          position: absolute;
+          top: 0;
+          width: 100%;
+
+          .bg {
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               overflow: hidden;
+          }
+
+
+          .c {
+               background-image: var(--bg1);
+               background-size: contain;
+               background-repeat: no-repeat;
+               width: 150px;
+               height: 150px;
+               position: absolute;
+          }
+
+          .bg-1 {
+               .c {
+                    width: 69px;
+                    height: 69px;
+               }
+          }
+
+          .bg-2 {
+               .c {
+                    width: 25px;
+                    height: 25px;
+               }
+          }
+
+          .bg-3 {
+               .c {
+                    width: 10px;
+                    height: 10px;
+               }
+          }
+     }
+
+
+
+
+
+
+
+}

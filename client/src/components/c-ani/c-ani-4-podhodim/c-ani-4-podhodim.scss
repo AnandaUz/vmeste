@@ -5,7 +5,7 @@ c-ani-4-podhodim.ani-block {
      --bg3: url(@assets/bl-4-3.svg);
 
      .pin-wrap {
-          height: 3500px;
+          height: 3800px;
      }
 
      .block-00 {
@@ -42,11 +42,7 @@ c-ani-4-podhodim.ani-block {
           background-image: var(--bg3);
      }
 
-     .block-01 {
-          height: 100vh;
-          position: absolute;
-          width: 100%;
-
+     .in-block {
           .in {
                display: flex;
                justify-content: center;
@@ -79,6 +75,14 @@ c-ani-4-podhodim.ani-block {
           }
      }
 
+     .block-01,
+     .block-02 {
+          height: 100vh;
+          position: absolute;
+          width: 100%;
+
+     }
+
 
      .block-l0 {
           display: flex;
@@ -94,14 +98,29 @@ c-ani-4-podhodim.ani-block {
           line-height: 1;
           margin: 0 auto;
           max-width: 500px;
+
+          &.m {
+               color: #C8181B;
+               opacity: 0;
+               position: relative;
+               top: -30px;
+               text-align: center;
+          }
      }
 
      .block-02 {
-          margin: 100vh 0 0;
+          opacity: 0;
+
+          .in {
+
+               span {
+                    margin: 660px 0 0;
+                    width: 300px;
+               }
+          }
      }
 
 
-     // transform: translateY(-340px) scale(2.3);
 
 
 
