@@ -9,7 +9,7 @@ export class CAni4Podhodim extends CAniBlock {
     this.update();
     this.init();
 
-    this.scrollToTop();
+    // this.scrollToTop();
 
     const h0 = (window.innerHeight - 1022) / 2 - 150;
     // const dy = 800;
@@ -53,6 +53,17 @@ export class CAni4Podhodim extends CAniBlock {
     //   },
     // });
     t += dd + d0;
+
+    const easeInOutCubic = (t: number): number => {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    };
+
+    const getSteppedProgress = (progress: number, steps: number): number => {
+      const segment = 1 / steps;
+      const segmentIndex = Math.min(steps - 1, Math.floor(progress / segment));
+      const local = (progress - segmentIndex * segment) / segment;
+      return (segmentIndex + easeInOutCubic(local)) / steps;
+    };
     this.doAnimationByPixel({
       elClassName: ".block-01",
       start: t,
@@ -60,8 +71,8 @@ export class CAni4Podhodim extends CAniBlock {
       onStepPixel: ({ yProgress = 0, y = 0, el }) => {
         // const n = 4;
         // const amplitude = 1;
-        // const v = Math.sin(2 * Math.PI * yProgress) * yProgress;
-        el.style.transform = `translateY(${-h0}px) rotate(${45 + -(270 + 45) * yProgress}deg)`;
+        const v = getSteppedProgress(yProgress, 4);
+        el.style.transform = `translateY(${-h0}px) rotate(${45 + -(270 + 45) * v}deg)`;
         el.style.opacity = (y / 100).toString();
       },
     });
