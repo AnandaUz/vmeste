@@ -3,7 +3,7 @@ c-ani-5-menyaetsya.ani-block {
      --bg1: url(@assets/bl-5-1.svg);
 
      .pin-wrap {
-          height: 3800px;
+          height: 2800px;
      }
 
      .block-00 {
@@ -51,6 +51,39 @@ c-ani-5-menyaetsya.ani-block {
                     width: 10px;
                     height: 10px;
                }
+          }
+     }
+
+     .bl-in {
+          width: 100%;
+          position: absolute;
+          height: 100vh;
+          z-index: 2;
+          left: 0;
+          top: 0;
+
+          h3 {
+               height: 20%;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               font-size: 35px;
+               color: #686194;
+               margin: 85px auto 0;
+               max-width: 400px;
+               opacity: 0;
+          }
+
+          .text {
+               height: 35%;
+               font-size: 30px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               color: #666180;
+               margin: 0 auto 0;
+               max-width: 400px;
+               opacity: 0;
           }
      }
 

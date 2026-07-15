@@ -45,9 +45,8 @@ export class CAni5Menyaetsya extends CAniBlock {
 
     this.scrollToTop();
 
-    const dd = 200;
     const d0 = 0;
-    let t = 0;
+    let t = -window.innerHeight;
     const bl0 = this.querySelector(".block-00") as HTMLElement;
     const k = 7;
     const d: { count: number; w: number; h: number; k: number }[] = [
@@ -89,11 +88,11 @@ export class CAni5Menyaetsya extends CAniBlock {
       const minGap = i.w * 4; // это твой "rd"
 
       for (let j = 0; j < i.count; j++) {
-        const ball = getRandomBall(r.width, i.h, i.w, balls, minGap, 100);
+        const ball = getRandomBall(r.width, i.h, i.w, balls, minGap, 1000);
         if (ball) {
           balls.push(ball);
         } else {
-          console.warn("Не удалось разместить шар — слишком тесно");
+          // console.warn("Не удалось разместить шар — слишком тесно");
           break;
         }
       }
@@ -105,23 +104,61 @@ export class CAni5Menyaetsya extends CAniBlock {
         c.style.left = -i.w + Math.random() * r.width + "px";
         c.style.top = -i.w + Math.random() * i.h + "px";
 
-        // c.style.width = Math.random() * 100 + "px";
-        // c.style.height = Math.random() * 100 + "px";
-
         el.appendChild(c);
       }
 
       this.doAnimationByPixel({
         elClassName: ".bg-" + idx,
         start: t,
-        duration: dd * 4,
+        duration: window.innerHeight * 4,
         onStepPixel: ({ y = 0, el }) => {
           el.style.transform = `translateY(${-y * i.k}px)`;
         },
       });
     });
 
-    t += dd + d0;
+    t = -10;
+    const els = this.querySelectorAll(".bl-in");
+    const dd = 400;
+    const d1 = 50;
+    const p0 = 0.2;
+    const p1 = 0.9;
+    const func = ({
+      yProgress = 0,
+      el,
+    }: {
+      yProgress: number;
+      el: HTMLElement;
+    }) => {
+      if (yProgress < p0) {
+        const p = yProgress / p0;
+        el.style.transform = `scale(${2 - p})`;
+        el.style.opacity = p.toString();
+      } else if (yProgress > p1) {
+        const p = (yProgress - p1) / (1 - p1);
+        el.style.transform = `scale(${1 - p})`;
+        el.style.opacity = (1 - p).toString();
+      } else {
+        el.style.transform = `scale(1)`;
+        el.style.opacity = "1";
+      }
+    };
+    for (let j = 0; j < els.length; j++) {
+      this.doAnimationByPixel({
+        elClassName: `.bl-0${j} h3`,
+        start: t,
+        duration: dd,
+        onStepPixel: func,
+      });
+      t += d1;
+      this.doAnimationByPixel({
+        elClassName: `.bl-0${j} .text`,
+        start: t,
+        duration: dd,
+        onStepPixel: func,
+      });
+      t += dd;
+    }
   }
 }
 customElements.define("c-ani-5-menyaetsya", CAni5Menyaetsya);
