@@ -43,7 +43,7 @@ export class CAni5Menyaetsya extends CAniBlock {
     this.update();
     this.init();
 
-    this.scrollToTop();
+    // this.scrollToTop();
 
     // const d0 = 0;
     let t = -window.innerHeight;
