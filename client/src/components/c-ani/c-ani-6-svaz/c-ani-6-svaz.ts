@@ -10,7 +10,7 @@ export class CAni6Svaz extends CAniBlock {
     this.update();
     this.init();
 
-    // this.scrollToTop();
+    this.scrollToTop();
 
     const bl0 = this.querySelector(".block-00") as HTMLElement;
     for (let j = 0; j < 8; j++) {
@@ -33,7 +33,7 @@ export class CAni6Svaz extends CAniBlock {
         el.style.setProperty("--sc", `${yProgress * 100}%`);
       },
     });
-    t += dd;
+    t += 200;
 
     this.doAnimationByPixel({
       elClassName: `.cards`,
