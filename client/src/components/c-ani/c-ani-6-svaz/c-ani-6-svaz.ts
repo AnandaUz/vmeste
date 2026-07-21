@@ -10,7 +10,7 @@ export class CAni6Svaz extends CAniBlock {
     this.update();
     this.init();
 
-    this.scrollToTop();
+    // this.scrollToTop();
 
     const bl0 = this.querySelector(".block-00") as HTMLElement;
     for (let j = 0; j < 8; j++) {
@@ -34,6 +34,18 @@ export class CAni6Svaz extends CAniBlock {
       },
     });
     t += dd;
+
+    this.doAnimationByPixel({
+      elClassName: `.cards`,
+      start: t,
+      duration: dd * 2,
+      onStepPixel: ({ yProgress = 0, el }) => {
+        el.style.transform = `scale(${Math.pow(yProgress, 4) * 100}%) translateX(-${(1 - Math.pow(yProgress, 4)) * 1000}px)`;
+        if (yProgress > 0.99) el.style.overflowX = "auto";
+        else el.style.overflowX = "";
+      },
+    });
+    // t += dd * 2;
     this.doAnimationByPixel({
       elClassName: `.block-01`,
       start: t,

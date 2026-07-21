@@ -75,10 +75,12 @@ c-ani-6-svaz.ani-block {
      .cards {
           display: flex;
           gap: 12px;
-          overflow-x: auto;
+          // overflow-x: auto;
           scroll-snap-type: x mandatory;
           scroll-behavior: smooth;
-          padding: 0 calc((100vw - 320px)/2) 12px;
+          padding: 0 calc((100% - 320px)/2) 12px;
+          position: relative;
+          z-index: 30;
 
           >* {
                flex: 0 0 auto;
