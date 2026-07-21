@@ -1,0 +1,73 @@
+:root {
+     --img-bg1: url(@assets/bl-6-01.svg);
+     --img-bg2: url(@assets/bl-6-02.svg);
+
+
+}
+
+c-kartochka {
+
+     --gr1: linear-gradient(180deg, #ffffffe8 0%, #fffdf1e8 20%, #ffead8e8 100%);
+
+     display: block;
+     width: 320px;
+     height: 80vh;
+     background: var(--img-bg1), var(--img-bg2), var(--gr1);
+     background-size: 36px 36px, 36px 36px, 100% 100%;
+     background-position: top 9px left 9px, bottom 9px right 9px, center;
+     background-repeat: no-repeat;
+     position: relative;
+     z-index: 3;
+     height: 80vh;
+     border: 1px solid rgba(143, 93, 0, 0.2);
+     border-radius: 15px;
+     margin: 0 auto;
+     padding: 15px;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+     gap: 15px;
+     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+     color: #5E3D00;
+     font-size: 18px;
+
+     .smaller-text {
+          font-size: 16px;
+     }
+
+     h3 {
+          color: #DE7945;
+          font-size: 23px;
+     }
+
+     .img-ava {
+          width: 89px;
+          height: 89px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 auto;
+          border: 1px solid #5E3D0030;
+          padding: 2px;
+
+          img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               border-radius: 50%;
+          }
+     }
+
+     .line {
+          background: url(@assets/bl-6-03.svg);
+          width: 143px;
+          height: 7px;
+     }
+
+     p {
+
+          padding: 0 0 20px;
+     }
+
+
+}

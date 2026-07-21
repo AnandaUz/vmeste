@@ -7,6 +7,12 @@ c-ani-6-svaz.ani-block {
           height: 2900px;
      }
 
+     h2 {
+          color: #DE7945;
+          text-align: center;
+          padding: 15px 0;
+     }
+
      .block-00 {
           z-index: 2;
           position: absolute;
@@ -60,6 +66,24 @@ c-ani-6-svaz.ani-block {
           width: 100%;
           height: 100vh;
 
+     }
+
+     .block-02 {
+          position: relative;
+     }
+
+     .cards {
+          display: flex;
+          gap: 12px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          padding: 0 calc((100vw - 320px)/2) 12px;
+
+          >* {
+               flex: 0 0 auto;
+               scroll-snap-align: center;
+          }
      }
 
 

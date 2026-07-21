@@ -1,6 +1,7 @@
 import "./c-ani-6-svaz.scss";
 import template from "./c-ani-6-svaz.html?raw";
 import { CAniBlock } from "@/components/c-ani-block/c-ani-block";
+import "./c-kartochka/c-kartochka";
 
 export class CAni6Svaz extends CAniBlock {
   connectedCallback() {
@@ -29,7 +30,7 @@ export class CAni6Svaz extends CAniBlock {
       start: t,
       duration: 200,
       onStepPixel: ({ yProgress = 0, el }) => {
-        el.style.setProperty("--sc", `${10 + yProgress * 90}%`);
+        el.style.setProperty("--sc", `${yProgress * 100}%`);
       },
     });
     t += dd;
